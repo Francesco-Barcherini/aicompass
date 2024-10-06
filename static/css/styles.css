@@ -1,4 +1,10 @@
 /* Navbar */
+body {
+    margin: 0;
+    /* Latex font */
+    font-family: 'Lato', sans-serif;
+}
+
 .navbar {
     position: sticky;
     top: 0;
