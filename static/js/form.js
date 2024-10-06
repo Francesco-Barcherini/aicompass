@@ -1,6 +1,7 @@
 // create forms group for each question
 
 let q_entity, q_trademark, q_usedEU, q_safety, q_annex1A, q_marketyourname, q_prohibited, q_excluded2, q_generalpurpose, q_annex1B, q_annex1A_safety, q_annex3, q_interact, q_mediacontent;
+let result;
 
 function createForms() {
     q_entity = document.createElement('div');
@@ -216,8 +217,414 @@ function createForms() {
         </div>';
 }
 
+function reset_result() {
+    result.innerHTML = '<h2>Output</h2><p>Answer to get more information</p>';
+}
+
+// mediacontent changes
+function mediacontent_change() {
+    let mediacontent = document.querySelector('input[name="q_mediacontent"]:checked').value;
+    let form = document.querySelector('form');
+
+    // remove from result all the p with class diverse from continues
+    let p = result.querySelectorAll('p');
+    p.forEach(function (element) {
+        if (element.className != 'continues') {
+            result.removeChild(element);
+        }
+    }
+    );
+
+    // remove all children after q_mediacontent in form
+    let next = q_mediacontent.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_mediacontent.nextElementSibling;
+    }
+
+    if (mediacontent == 1){
+        // add p to result
+        let p = document.createElement('p');
+        p.textContent = 'You have no obligations from the AI Act';
+        result.appendChild(p);
+    }
+    else if (mediacontent == 2){
+        // add p to result
+        let p = document.createElement('p');
+        p.textContent = 'You must respect transparency obligations towards natural persons';
+        result.appendChild(p);
+    }
+}
+
+// interaction changes
+function interact_change() {
+    let interact = document.querySelector('input[name="q_interact"]:checked').value;
+    let form = document.querySelector('form');
+
+    // remove from result all the p with class diverse from continues
+    let p = result.querySelectorAll('p');
+    p.forEach(function (element) {
+        if (element.className != 'continues') {
+            result.removeChild(element);
+        }
+    }
+    );
+
+    // remove all children after q_interact in form
+    let next = q_interact.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_interact.nextElementSibling;
+    }
+
+    if (interact == 1){
+        // add p to result with continues class
+        let p = document.createElement('p');
+        p.className = 'continues';
+        p.innerHTML = 'You must respect transparency obligations towards natural persons';
+        result.appendChild(p);
+
+        q_mediacontent.addEventListener('change', mediacontent_change);
+        form.appendChild(q_mediacontent);
+    }
+    else if (interact == 2){
+        // mediacontent
+        q_mediacontent.addEventListener('change', mediacontent_change);
+        form.appendChild(q_mediacontent);
+    }
+}
+
+// annex3 changes
+function annex3_change() {
+    let annex3 = document.querySelector('input[name="q_annex3"]:checked').value;
+    let form = document.querySelector('form');
+
+    // remove from result all the p with class diverse from continues
+    let p = result.querySelectorAll('p');
+    p.forEach(function (element) {
+        if (element.className != 'continues') {
+            result.removeChild(element);
+        }
+    }
+    );
+
+    // remove all children after q_annex3 in form
+    let next = q_annex3.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_annex3.nextElementSibling;
+    }
+
+    if (annex3 == 1){
+        // add p to result
+        let p = document.createElement('p');
+        p.className = 'continues';
+        p.textContent = 'Your AI System is under High-Risk AI systems\' regulation';
+        result.appendChild(p);
+
+        // interaction
+        q_interact.addEventListener('change', interact_change);
+        form.appendChild(q_interact);
+    }
+    else if (annex3 == 2){
+        // interaction
+        q_interact.addEventListener('change', interact_change);
+        form.appendChild(q_interact);
+    }
+}
+
+// annex1A safety changes
+function annex1A_safety_change() {
+    let annex1A_safety = document.querySelector('input[name="q_annex1A_safety"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_annex1A_safety in form
+    let next = q_annex1A_safety.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_annex1A_safety.nextElementSibling;
+    }
+
+    if (annex1A_safety == 1){
+        // add p to result
+        let p = document.createElement('p');
+        p.className = 'continues';
+        p.textContent = 'Your AI System is under High-Risk AI systems\' regulation';
+        result.appendChild(p);
+
+        // interaction
+        q_interact.addEventListener('change', interact_change);
+        form.appendChild(q_interact);
+    }
+    else if (annex1A_safety == 2){
+        // annex3
+        q_annex3.addEventListener('change', annex3_change);
+        form.appendChild(q_annex3);
+    }
+}
+
+// annex1B changes
+function annex1B_change() {
+    let annex1B = document.querySelector('input[name="q_annex1B"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_annex1B in form
+    let next = q_annex1B.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_annex1B.nextElementSibling;
+    }
+
+    if (annex1B == 1){
+        result.innerHTML = '<h2>Output</h2><p class="continues">Your AI System is exempted from AI Risk regulation</p>';
+        //interaction
+        q_interact.addEventListener('change', interact_change);
+        form.appendChild(q_interact);
+    }
+    else if (annex1B == 2){
+        //annex1A safety
+        q_annex1A_safety.addEventListener('change', annex1A_safety_change);
+        form.appendChild(q_annex1A_safety);
+    }
+}
+
+// generalpurpose changes
+function generalpurpose_change() {
+    let generalpurpose = document.querySelector('input[name="q_generalpurpose"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_generalpurpose in form
+    let next = q_generalpurpose.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_generalpurpose.nextElementSibling;
+    }
+
+    if (generalpurpose == 1){
+        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+    }
+    else if (generalpurpose == 2){
+        q_annex1B.addEventListener('change', annex1B_change);
+        form.appendChild(q_annex1B);
+    }
+}
+// excluded2 changes
+function excluded2_change() {
+    let excluded2 = document.querySelector('input[name="q_excluded2"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_excluded2 in form
+    let next = q_excluded2.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_excluded2.nextElementSibling;
+    }
+
+    if (excluded2 == 1){
+        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+    }
+    else if (excluded2 == 2){
+        //generalpurpose
+        q_generalpurpose.addEventListener('change', generalpurpose_change);
+        form.appendChild(q_generalpurpose);
+    }
+}
+
+// if q_prohibited changes, show the next question
+function prohibited_change() {
+    let prohibited = document.querySelector('input[name="q_prohibited"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_prohibited in form
+    let next = q_prohibited.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_prohibited.nextElementSibling;
+    }
+
+    if (prohibited == 1){
+        result.innerHTML = '<h2>Output</h2><p>Your AI System is prohibited</p>';
+    }
+    else if (prohibited == 2){
+        // excluded2
+        q_excluded2.addEventListener('change', excluded2_change);
+        form.appendChild(q_excluded2);
+    }
+}
+
+// if q_usedEU changes, show the next question
+function usedEU_change() {
+    let usedEU = document.querySelector('input[name="q_usedEU"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_usedEU in form
+    let next = q_usedEU.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_usedEU.nextElementSibling;
+    }
+
+    if (usedEU == 1){
+        q_prohibited.addEventListener('change', prohibited_change);
+        form.appendChild(q_prohibited);
+    }
+    else if (usedEU == 2){
+        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+    }
+}
+
+// if q_trademark changes, show the next question
+function trademark_change() {
+    let trademark = document.querySelector('input[name="q_trademark"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_trademark in form
+    let next = q_trademark.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_trademark.nextElementSibling;
+    }
+
+    if (trademark == 1){
+        // prompt that you are conform as a provider
+        window.alert('You are conform as a provider');
+
+        q_usedEU.addEventListener('change', usedEU_change);
+        form.appendChild(q_usedEU);
+    }
+    else if (trademark == 2){
+        // no obligations
+        result.innerHTML = '<h2>Output</h2><p>Your AI System does not have obligations from the AI Act</p>';
+    }
+}
+
+// marketyourname changes
+function marketyourname_change() {
+    let marketyourname = document.querySelector('input[name="q_marketyourname"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_marketyourname in form
+    let next = q_marketyourname.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_marketyourname.nextElementSibling;
+    }
+
+    if (marketyourname == 1){
+        // prompt that you are conform as a provider
+        window.alert('You are conform as a provider');
+
+        q_usedEU.addEventListener('change', usedEU_change);
+        form.appendChild(q_usedEU);
+    }
+    else if (marketyourname == 2){
+        // no regulated
+        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+    }
+}
+
+// annex1A changes
+function annex1A_change() {
+    let annex1A = document.querySelector('input[name="q_annex1A"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_annex1A in form
+    let next = q_annex1A.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_annex1A.nextElementSibling;
+    }
+
+    if (annex1A == 1){
+        q_marketyourname.addEventListener('change', marketyourname_change);
+        form.appendChild(q_marketyourname);
+    }
+    else if (annex1A == 2){
+        // not regulated
+        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+    }
+}
+
+// if q_safe changes, show the next question
+function safety_change() {
+    let safety = document.querySelector('input[name="q_safety"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_safety in form
+    let next = q_safety.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_safety.nextElementSibling;
+    }
+
+    if (safety == 1){
+        q_annex1A.addEventListener('change', annex1A_change);
+        form.appendChild(q_annex1A);
+    }
+    else if (safety == 2){
+        // not regulated
+        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+    }
+}
+
+// if q_entity changes, show the next question
+function entity_change() {
+    let entity = document.querySelector('input[name="q_entity"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_entity in form
+    let next = q_entity.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_entity.nextElementSibling;
+    }
+
+    if (entity == 1){
+        q_usedEU.addEventListener('change', usedEU_change);
+        form.appendChild(q_usedEU);
+    }
+    else if (entity == 2){
+        q_trademark.addEventListener('change', trademark_change);
+        form.appendChild(q_trademark);
+    }
+    else if (entity == 3){
+        q_safety.addEventListener('change', safety_change);
+        form.appendChild(q_safety);
+    }
+}
+
+
 function init() {
     createForms();
+
+    result = document.getElementById('ai_evaluator_results');
+
+    reset_result();
+
+    q_entity.addEventListener('change', entity_change);
+
     let form = document.querySelector('form');
     form.appendChild(q_entity);
 }
