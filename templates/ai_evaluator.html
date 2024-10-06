@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>AI Evaluator</h2>
-<form method="POST">
-    <label for="input_data">Enter AI System Information:</label>
-    <input type="text" id="input_data" name="input_data" required>
-    <button type="submit">Evaluate</button>
-</form>
+<h1>AI Evaluator</h1>
+<p>Please enter the AI system information to evaluate it based on the AI Act.</p>
+<div class="ai_evaluator_form">
+    <h3>Find out which articles relate to your AI system</h3>
+    <form>
+        
+    </form>
+    <div id="ai_evaluator_results"></div>
+</div>
+
+<script src="../static/js/form.js"></script>
 {% endblock %}
