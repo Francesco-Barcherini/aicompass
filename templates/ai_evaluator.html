@@ -14,5 +14,68 @@
     </div>
 </div>
 
-<script src="../static/js/form.js"></script>
+<style>
+    .content {
+        margin: 2rem 4rem;
+    }
+
+    .ai_evaluator_form {
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #3b7bce7e;
+    }
+
+    .ai_evaluator_form label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .form_check {
+        display: flex;
+        align-items: left;
+        width: 100%;
+    }
+
+    .text_form label {
+        text-decoration: underline;
+        margin: 0.5rem 0;
+    }
+
+    .text_form p {
+        margin: 0.5rem 0;
+    }
+
+    .form-group {
+        margin-bottom: 30px;
+    }
+
+    .ai_evaluator_form input[type="text"],
+    .ai_evaluator_form input[type="number"],
+    .ai_evaluator_form input {
+        padding: 5px;
+    }
+
+    .ai_evaluator_form button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .ai_evaluator_form button:hover {
+        background-color: #0056b3;
+    }
+
+    #ai_evaluator_results {
+        margin-top: 20px;
+        border-top: 1px solid #ccc;
+        padding-top: 20px;
+    }
+</style>
+
+<script src="/static/js/form.js"></script>
 {% endblock %}
