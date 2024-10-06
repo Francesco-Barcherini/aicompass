@@ -21,8 +21,8 @@ def scrape_articles():
 # AI Act Route (with scraping)
 @app.route('/ai-act')
 def ai_act():
-    articles = scrape_articles()
-    return render_template('ai_act_scraped.html', articles=articles)
+    #articles = scrape_articles()
+    return render_template('ai_act.html', articles=None)
 
 # Home Route
 @app.route('/')
