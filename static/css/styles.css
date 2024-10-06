@@ -3,6 +3,8 @@ body {
     margin: 0;
     /* Latex font */
     font-family: 'Lato', sans-serif;
+    color: black;
+    background-color: white;
 }
 
 .navbar {
@@ -11,19 +13,26 @@ body {
     background-color: white;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    align-items: center;
+    padding: 0.5rem 2rem;
     box-shadow: 0 4px 2px -2px gray;
     z-index: 1000;
+    color: #303A99;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
-    height: 40px;
+    height: 80px;
     margin-right: 10px;
 }
 
 .logo span {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
 }
 
 .nav-links {
@@ -32,13 +41,17 @@ body {
 }
 
 .nav-links li {
-    margin: 0 1rem;
+    margin: 0 5rem;
+}
+
+.nav-links a:hover {
+    color: darkblue;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #000;
     font-weight: bold;
+    font-size: 30px;
 }
 
 /* Accordion for AI Act */
@@ -58,4 +71,21 @@ body {
 
 .accordion-content.active {
     max-height: 500px;
+}
+
+footer {
+    background-color: white;
+    color: #303A99;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: 0 -4px 2px -2px gray;
+    width: 100%;
+}
+
+.et_pb_module .et_pb_image .et_pb_image_0_tb_footer {
+    margin: 0 auto;
+}
+
+.et_pb_module .et_pb_text .et_pb_text_2_tb_footer .et_pb_text_align_left .et_pb_bg_layout_light {
+    margin: 0 auto;
 }

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>AI Act</h2>
+<h2 id="title">AI Act</h2>
 <ul>
     <div id="main-content">
 
@@ -21,7 +21,7 @@
         
         
         <div class="et_pb_row et_pb_row_0 et_pb_equal_columns et_pb_row_1-4_1-2_1-4">
-            <div class="et_pb_column et_pb_column_1_2 et_pb_column_1 et_pb_css_mix_blend_mode_passthrough et_had_animation" style="">
+            <div class="begin et_pb_column et_pb_column_1_2 et_pb_column_1 et_had_animation" style="">
         
         
         
@@ -417,27 +417,56 @@
             </div>
 
 
-</div><style>.aia-table-of-contents {
+</div><style>
+.content {
+    margin: 2rem 4rem;
 }
+
+
+
+h2#title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.et_pb_css_mix_blend_mode_passthrough {
+    border: #3B7BCE 1px solid;
+    border-radius: 6px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #3b7bce7e;
+    margin-bottom: 2rem;
+}
+
+.aia-table-of-contents {
+}
+
+body ul {
+    padding: 0;
+}
+
 .accordion-header {
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: baseline;
 cursor: pointer;
-margin-top: 8px;
-padding-top: 2px;
+margin: 8px 0 4px 0;
+padding: 2px 0 0 0;
 user-select: none;
 border-top: 1px dashed lightgray;
 }
 .accordion-header:hover {
 color: #3B7BCE
 }
+
 .parent-title {
 font-size: 16px;
 padding-top: 8px;
 width: 80%;
 user-select: auto;
+font-weight: bold;
 }
 .accordion-button {
 margin-left: 6px;
@@ -447,20 +476,31 @@ background-color: transparent;
 .accordion-content {
 max-height: 0;
 overflow: hidden;
+padding-top: 0;
 }
 .accordion-content.activeCont {
 max-height: 100%;
 }
 .child-article {
 padding-left: 18px;
-padding-top: .6em;
+padding-top: 0;
 padding-bottom: 0em;
 font-size: 14px;
 line-height: 1.35;
+margin-top: 0;
 }
+.child-article a {
+    text-decoration: none;
+}
+
+.child-article a:hover {
+    text-decoration: none;
+    color: #3B7BCE;
+}
+
 .child-chapter {
 padding-left: 18px;
-padding-top: .6em;
+padding-top: 0em;
 padding-bottom: 0em;
 font-size: 15px;
 line-height: 1.35;
@@ -473,7 +513,13 @@ content: "+";
 }
 .active:after {
 content: "-";
-}</style><script>var accHead = document.getElementsByClassName("accordion-header");
+}
+
+.annexes-list a {
+    text-decoration: none;
+}
+
+</style><script>var accHead = document.getElementsByClassName("accordion-header");
 var i;
 for (i = 0; i < accHead.length; i++) {
 accHead[i].addEventListener("click", function () {
