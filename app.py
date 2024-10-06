@@ -1,8 +1,10 @@
 from flask import Flask, render_template, request
 import requests
 from bs4 import BeautifulSoup
+import re
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 # Scraping function to get articles
 def scrape_articles():
@@ -23,6 +25,33 @@ def scrape_articles():
 def ai_act():
     #articles = scrape_articles()
     return render_template('ai_act.html', articles=None)
+
+# AI Act Route for articles with scraping
+# all links /article/#num goes into article_annex.html with args entry_tile, summary and content
+@app.route('/article/<num>')
+def article_annex(num):
+    url = f'https://artificialintelligenceact.eu/article/{num}'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.content, 'html.parser')
+
+    # select h1 element with class entry-title and pass it to the template as element, not as text content
+    entry_title = soup.select_one('.entry-title').prettify()
+
+    # extract the content of the summary. It is all the paragraphs except the last one inside .aia-clairk-summary-content-section element
+    summary = soup.select('.aia-clairk-summary-content-section p')[:-1]
+    
+    # extract the content of the article. It is all the elements inside class="et_pb_module et_pb_post_content et_pb_post_content_0_tb_body"
+    content = soup.select_one('.et_pb_module.et_pb_post_content.et_pb_post_content_0_tb_body')
+    content = str(content)
+    #remove all span .aia-recital-ref elements
+    content = re.sub(r'<span class="aia-recital-ref">.*?</span>', '', content)
+    #make all <a> elements to be simple text, without links
+    content = re.sub(r'<a.*?>(.*?)</a>', r'\1', content)
+
+    # make back a HTML element from the string
+    content = BeautifulSoup(content, 'html.parser').prettify()
+
+    return render_template('article_annex.html', entry_title=entry_title, summary=summary, content=content)
 
 # Home Route
 @app.route('/')

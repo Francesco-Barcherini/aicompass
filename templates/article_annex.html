@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="article_annex">
+    {{entry_title|safe}}
+    <div class="summary">
+        <h2>Summary</h2>
+        {% for paragraph in summary %}
+            {{ paragraph|safe }}
+        {% endfor %}
+    </div>
+    {{ content | safe }}
+{% endblock %}
