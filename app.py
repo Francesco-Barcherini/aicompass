@@ -20,17 +20,11 @@ def scrape_articles():
         })
     return articles
 
-# AI Act Route (with scraping)
-@app.route('/ai-act')
-def ai_act():
-    #articles = scrape_articles()
-    return render_template('ai_act.html', articles=None)
-
-# AI Act Route for articles with scraping
-# all links /article/#num goes into article_annex.html with args entry_tile, summary and content
-@app.route('/article/<num>')
-def article_annex(num):
-    url = f'https://artificialintelligenceact.eu/article/{num}'
+def scrape(type, num):
+    if type not in ['article', 'annex']:
+        return None
+    
+    url = f'https://artificialintelligenceact.eu/{type}/{num}'
     response = requests.get(url)
     soup = BeautifulSoup(response.content, 'html.parser')
 
@@ -52,6 +46,22 @@ def article_annex(num):
     content = BeautifulSoup(content, 'html.parser').prettify()
 
     return render_template('article_annex.html', entry_title=entry_title, summary=summary, content=content)
+
+# AI Act Route (with scraping)
+@app.route('/ai-act')
+def ai_act():
+    #articles = scrape_articles()
+    return render_template('ai_act.html', articles=None)
+
+# AI Act Route for articles with scraping
+# all links /article/#num goes into article_annex.html with args entry_tile, summary and content
+@app.route('/article/<num>')
+def article_annex(num):
+    return scrape('article', num)
+
+@app.route('/annex/<num>')
+def annex(num):
+    return scrape('annex', num)
 
 # Home Route
 @app.route('/')
