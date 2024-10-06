@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>AI Evaluator</h2>
+<form method="POST">
+    <label for="input_data">Enter AI System Information:</label>
+    <input type="text" id="input_data" name="input_data" required>
+    <button type="submit">Evaluate</button>
+</form>
+{% endblock %}

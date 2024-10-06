@@ -1,0 +1,55 @@
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 0 4px 2px -2px gray;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Accordion for AI Act */
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border-top: 1px solid #ddd;
+    padding: 1rem;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-content.active {
+    max-height: 500px;
+}

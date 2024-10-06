@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Compass</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="/static/img/logo.png" alt="AI Compass Logo">
+            <span>AI Compass</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/ai-act">AI Act</a></li>
+            <li><a href="/ai-evaluator">AI Evaluator</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Dynamic content will be inserted here based on the page -->
+        {% block content %}{% endblock %}
+    </div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
