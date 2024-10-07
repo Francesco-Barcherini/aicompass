@@ -132,7 +132,7 @@ function createForms() {
     q_generalpurpose.innerHTML = ' \
         <div class="text_form"> \
             <label for="q_generalpurpose">General purpose (<a href="http://aicompass.barchero.it/article/51/">art.51</a>)</label> \
-            <p> Is your system a General Puroose AI model? </p> \
+            <p> Is your system a General Purpose AI model? </p> \
         </div> \
         <div class="form-check"> \
             <input class="form-check-input" type="radio" name="q_generalpurpose" id="q_generalpurpose1" value="1"> \

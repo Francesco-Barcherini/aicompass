@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -46,6 +46,13 @@ def scrape(type, num):
     content = BeautifulSoup(content, 'html.parser').prettify()
 
     return render_template('article_annex.html', entry_title=entry_title, summary=summary, content=content)
+
+# Middleware to redirect HTTPS to HTTP
+@app.before_request
+def redirect_https_to_http():
+    if request.is_secure:
+        url = request.url.replace("https://", "http://", 1)
+        return redirect(url, code=301)
 
 # AI Act Route (with scraping)
 @app.route('/ai-act')
