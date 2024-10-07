@@ -1,6 +1,6 @@
 // create forms group for each question
 
-let q_entity, q_trademark, q_usedEU, q_safety, q_annex1A, q_marketyourname, q_prohibited, q_excluded2, q_generalpurpose, q_annex1B, q_annex1A_safety, q_annex3, q_interact, q_mediacontent;
+let q_entity, q_trademark, q_usedEU, q_safety, q_annex1A, q_marketyourname, q_prohibited, q_excluded2, q_generalpurpose, q_annex1B, q_annex1A_safety, q_annex3, q_interact, q_mediacontent, q_established;
 let result;
 
 function createForms() {
@@ -9,7 +9,7 @@ function createForms() {
     q_entity.id = 'q_entity';
     q_entity.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_entity">Type of user</label> \
+            <label for="q_entity">Type of user (<a href="http://aicompass.barchero.it/article/25/">art.25 par.1</a>)</label> \
             <p> You are a: </p> \
         </div> \
         <div class="form-check"> \
@@ -215,6 +215,21 @@ function createForms() {
             <input class="form-check-input" type="radio" name="q_mediacontent" id="q_mediacontent2" value="2"> \
             <label class="form-check-label" for="q_mediacontent2">No</label> \
         </div>';
+
+    q_established = document.createElement('div');  
+    q_established.className = 'form-group';
+    q_established.id = 'q_established';
+    q_established.innerHTML = ' \
+        <div class="text_form"> \
+            <label for="q_established">Established</label> \
+            <p> Are you established or operate within the EU? </p> \
+        </div> \
+        <div class="form-check"> \
+            <input class="form-check-input" type="radio" name="q_established" id="q_established1" value="1"> \
+            <label class="form-check-label" for="q_established1">Yes</label> \
+            <input class="form-check-input" type="radio" name="q_established" id="q_established2" value="2"> \
+            <label class="form-check-label" for="q_established2">No</label> \
+        </div>';
 }
 
 function reset_result() {
@@ -245,7 +260,7 @@ function mediacontent_change() {
     if (mediacontent == 1){
         // add p to result
         let p = document.createElement('p');
-        p.textContent = 'You have no obligations from the AI Act';
+        p.textContent = 'Transparency obligations for synthetic content';
         result.appendChild(p);
     }
     else if (mediacontent == 2){
@@ -282,7 +297,17 @@ function interact_change() {
         let p = document.createElement('p');
         p.className = 'continues';
         p.innerHTML = 'You must respect transparency obligations towards natural persons';
-        result.appendChild(p);
+        // if same p is already in result, don't add it again
+        let p_result = result.querySelectorAll('p');
+        let found = false;
+        p_result.forEach(function (element) {
+            if (element.textContent == p.textContent) {
+                found = true;
+            }
+        }
+        );
+        if (!found)
+            result.appendChild(p);
 
         q_mediacontent.addEventListener('change', mediacontent_change);
         form.appendChild(q_mediacontent);
@@ -407,7 +432,24 @@ function generalpurpose_change() {
     }
 
     if (generalpurpose == 1){
-        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+        // add p to result with continues class
+        let p = document.createElement('p');
+        p.className = 'continues';
+        p.innerHTML = 'You have to follow General-Purpose AI Obligations';
+        // if same p is already in result, don't add it again
+        let p_result = result.querySelectorAll('p');
+        let found = false;
+        p_result.forEach(function (element) {
+            if (element.textContent == p.textContent) {
+                found = true;
+            }
+        }
+        );
+        if (!found)
+            result.appendChild(p);
+
+        q_annex1B.addEventListener('change', annex1B_change);
+        form.appendChild(q_annex1B);
     }
     else if (generalpurpose == 2){
         q_annex1B.addEventListener('change', annex1B_change);
@@ -462,6 +504,31 @@ function prohibited_change() {
     }
 }
 
+// if q_established changes, show the next question
+function established_change() {
+    let established = document.querySelector('input[name="q_established"]:checked').value;
+    let form = document.querySelector('form');
+
+    reset_result();
+
+    // remove all children after q_established in form
+    let next = q_established.nextElementSibling;
+    while (next) {
+        form.removeChild(next);
+        next = q_established.nextElementSibling;
+    }
+
+    if (established == 1){
+        // prohibited
+        q_prohibited.addEventListener('change', prohibited_change);
+        form.appendChild(q_prohibited);
+    }
+    else if (established == 2){
+        // not regulated
+        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+    }
+}
+
 // if q_usedEU changes, show the next question
 function usedEU_change() {
     let usedEU = document.querySelector('input[name="q_usedEU"]:checked').value;
@@ -481,7 +548,9 @@ function usedEU_change() {
         form.appendChild(q_prohibited);
     }
     else if (usedEU == 2){
-        result.innerHTML = '<h2>Output</h2><p>Your AI System is not regulated by the EU AI Act</p>';
+        // established
+        q_established.addEventListener('change', established_change);
+        form.appendChild(q_established);
     }
 }
 
@@ -507,8 +576,9 @@ function trademark_change() {
         form.appendChild(q_usedEU);
     }
     else if (trademark == 2){
-        // no obligations
-        result.innerHTML = '<h2>Output</h2><p>Your AI System does not have obligations from the AI Act</p>';
+        // established
+        q_established.addEventListener('change', established_change);
+        form.appendChild(q_established);
     }
 }
 
