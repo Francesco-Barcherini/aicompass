@@ -260,7 +260,7 @@ function mediacontent_change() {
     if (mediacontent == 1){
         // add p to result
         let p = document.createElement('p');
-        p.textContent = 'Transparency Obligations: Synthetic Content (<a href="http://aicompass.barchero.it/article/50/">art.50</a>):   \
+        p.innerHTML = 'Transparency Obligations: Synthetic Content (<a href="http://aicompass.barchero.it/article/50/">art.50</a>):   \
             <ul> \
                 <li>Marking synthetic content: According to <a href="http://aicompass.barchero.it/article/50/">art.50(3)</a>, you must ensure that the outputs of the AI system are clearly marked in a machine-readable format, so they can be detected as artificially generated or manipulated;</li> \
                 <li>Exemptions: This obligation does not apply to content that is authorized by law, as stated in <a href="http://aicompass.barchero.it/article/50/">art.50(3)</a>.</li> \
@@ -276,7 +276,7 @@ function mediacontent_change() {
     else if (mediacontent == 2){
         // add p to result
         let p = document.createElement('p');
-        p.textContent = 'Transparency Obligations for Natural Persons (<a href="http://aicompass.barchero.it/article/50/">art.50</a>): \
+        p.innerHTML = 'Transparency Obligations for Natural Persons (<a href="http://aicompass.barchero.it/article/50/">art.50</a>): \
             <ul> \
                 <li>Informing Individuals: According to <a href="http://aicompass.barchero.it/article/50/">art.50(1)</a>, the AI system, its provider, or its user must inform any person interacting with the system in a timely and clear manner that they are engaging with an AI system, unless it is obvious from the context;</li> \
                 <li>Providing Detailed Information: Under <a href="http://aicompass.barchero.it/article/50/">art.50(2)</a>, when appropriate and relevant, you must include additional information such as;</li> \
@@ -331,7 +331,7 @@ function interact_change() {
     if (interact == 1){
         // add p to result
         let p = document.createElement('p');
-        p.textContent = 'Transparency Obligations for Natural Persons (<a href="http://aicompass.barchero.it/article/50/">art.50</a>): \
+        p.innerHTML = 'Transparency Obligations for Natural Persons (<a href="http://aicompass.barchero.it/article/50/">art.50</a>): \
             <ul> \
                 <li>Informing Individuals: According to <a href="http://aicompass.barchero.it/article/50/">art.50(1)</a>, the AI system, its provider, or its user must inform any person interacting with the system in a timely and clear manner that they are engaging with an AI system, unless it is obvious from the context;</li> \
                 <li>Providing Detailed Information: Under <a href="http://aicompass.barchero.it/article/50/">art.50(2)</a>, when appropriate and relevant, you must include additional information such as;</li> \
@@ -395,7 +395,7 @@ function annex3_change() {
         // add p to result
         let p = document.createElement('p');
         p.className = 'continues';
-        p.textContent = 'Your AI System is under High-Risk AI systems\' regulation (<a href="http://aicompass.barchero.it/article/6/">art.6</a>): \
+        p.innerHTML = 'Your AI System is under High-Risk AI systems\' regulation (<a href="http://aicompass.barchero.it/article/6/">art.6</a>): \
             <ul> \
                 <li>Risk management processes: Establish and implement risk management processes as required by <a href="http://aicompass.barchero.it/article/9/">art.9</a>;</li> \
                 <li>Data quality: Use high-quality training, validation, and testing data in accordance with <a href="http://aicompass.barchero.it/article/10/">art.10</a>;</li> \
@@ -454,7 +454,7 @@ function annex1A_safety_change() {
         // add p to result
         let p = document.createElement('p');
         p.className = 'continues';
-        p.textContent = 'Your AI System is under High-Risk AI systems\' regulation (<a href="http://aicompass.barchero.it/article/6/">art.6</a>): \
+        p.innerHTML = 'Your AI System is under High-Risk AI systems\' regulation (<a href="http://aicompass.barchero.it/article/6/">art.6</a>): \
             <ul> \
                 <li>Risk management processes: Establish and implement risk management processes as required by <a href="http://aicompass.barchero.it/article/9/">art.9</a>;</li> \
                 <li>Data quality: Use high-quality training, validation, and testing data in accordance with <a href="http://aicompass.barchero.it/article/10/">art.10</a>;</li> \
