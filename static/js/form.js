@@ -26,7 +26,7 @@ function createForms() {
     q_trademark.id = 'q_trademark';
     q_trademark.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_trademark">Changes</label> \
+            <label for="q_trademark">Changes (<a href="http://aicompass.barchero.it/article/25/">art.25 par.1</a>)</label> \
             <p> Did you change name/trademark, purpose or any substantial attribute of the system? </p> \
         </div> \
         <div class="form-check"> \
@@ -41,7 +41,7 @@ function createForms() {
     q_usedEU.id = 'q_usedEU';
     q_usedEU.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_usedEU">Used in the EU</label> \
+            <label for="q_usedEU">Used in the EU (<a href="http://aicompass.barchero.it/article/2/">art.2</a>)</label> \
             <p> Is the system used in the European Union? </p> \
         </div> \
         <div class="form-check"> \
@@ -56,7 +56,7 @@ function createForms() {
     q_safety.id = 'q_safety';
     q_safety.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_safety">Safety</label> \
+            <label for="q_safety">Safety (<a href="http://aicompass.barchero.it/article/6/">art.6</a>)</label> \
             <p> Is there an AI system as safety component in your product? </p> \
         </div> \
         <div class="form-check"> \
@@ -71,7 +71,7 @@ function createForms() {
     q_annex1A.id = 'q_annex1A';
     q_annex1A.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_annex1A">Annex IA</label> \
+            <label for="q_annex1A">Annex IA (<a href="http://aicompass.barchero.it/annex/1/">annex I sec. A</a>)</label> \
             <p> Are you within one of the categories of Annex 1, Section A? </p> \
         </div> \
         <div class="form-check"> \
@@ -86,7 +86,7 @@ function createForms() {
     q_marketyourname.id = 'q_marketyourname';
     q_marketyourname.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_marketyourname">Use of name</label> \
+            <label for="q_marketyourname">Use of name (<a href="http://aicompass.barchero.it/article/25/">art.25 par.1</a>)</label> \
             <p> Will the AI system be placed into market or put into service with your name or trademark? </p> \
         </div> \
         <div class="form-check"> \
@@ -101,7 +101,7 @@ function createForms() {
     q_prohibited.id = 'q_prohibited';
     q_prohibited.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_prohibited">Prohibited</label> \
+            <label for="q_prohibited">Prohibited (<a href="http://aicompass.barchero.it/article/5/">art.5</a>)</label> \
             <p> Is your system prohibited (Article 5)? </p> \
         </div> \
         <div class="form-check"> \
@@ -116,7 +116,7 @@ function createForms() {
     q_excluded2.id = 'q_excluded2';
     q_excluded2.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_excluded2">Excluded cases</label> \
+            <label for="q_excluded2">Excluded cases (<a href="http://aicompass.barchero.it/article/2/">art.2</a>)</label> \
             <p> Is your system among the excluded cases? (Article 2) </p> \
         </div> \
         <div class="form-check"> \
@@ -131,7 +131,7 @@ function createForms() {
     q_generalpurpose.id = 'q_generalpurpose';
     q_generalpurpose.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_generalpurpose">General purpose</label> \
+            <label for="q_generalpurpose">General purpose (<a href="http://aicompass.barchero.it/article/51/">art.51</a>)</label> \
             <p> Is your system a General Puroose AI model? </p> \
         </div> \
         <div class="form-check"> \
@@ -146,7 +146,7 @@ function createForms() {
     q_annex1B.id = 'q_annex1B';
     q_annex1B.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_annex1B">Annex IB</label> \
+            <label for="q_annex1B">Annex IB (<a href="http://aicompass.barchero.it/annex/1/">annex I sec. B</a>)</label> \
             <p> Is your system a product (or is the safety component of a product) in Annex 1 Section B </p> \
         </div> \
         <div class="form-check"> \
@@ -161,7 +161,7 @@ function createForms() {
     q_annex1A_safety.id = 'q_annex1A_safety';
     q_annex1A_safety.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_annex1A_safety">Annex IA safety</label> \
+            <label for="q_annex1A_safety">Annex IA safety (<a href="http://aicompass.barchero.it/annex/1/">annex I sec. A</a>)</label> \
             <p> Is your system a product (or is the safety component of a product) in Annex 1, Section A? </p> \
         </div> \
         <div class="form-check"> \
@@ -176,7 +176,7 @@ function createForms() {
     q_annex3.id = 'q_annex3';
     q_annex3.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_annex3">Annex III</label> \
+            <label for="q_annex3">Annex III (<a href="http://aicompass.barchero.it/annex/3/">annex III</a>)</label> \
             <p> Is your system among the ones in Annex III? </p> \
         </div> \
         <div class="form-check"> \
@@ -191,7 +191,7 @@ function createForms() {
     q_interact.id = 'q_interact';
     q_interact.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_interact">Interaction</label> \
+            <label for="q_interact">Interaction (<a href="http://aicompass.barchero.it/article/50/">art.50 par.1</a>)</label> \
             <p> Does your system interact with humans? </p> \
         </div> \
         <div class="form-check"> \
@@ -206,7 +206,7 @@ function createForms() {
     q_mediacontent.id = 'q_mediacontent';
     q_mediacontent.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_mediacontent">Media content</label> \
+            <label for="q_mediacontent">Media content (<a href="http://aicompass.barchero.it/article/50/">art.50 parr.2,4</a>)</label> \
             <p> Does your system generate audio, image, video or text content? </p> \
         </div> \
         <div class="form-check"> \
@@ -221,7 +221,7 @@ function createForms() {
     q_established.id = 'q_established';
     q_established.innerHTML = ' \
         <div class="text_form"> \
-            <label for="q_established">Established</label> \
+            <label for="q_established">Established (<a href="http://aicompass.barchero.it/article/2/">art.2</a>)</label> \
             <p> Are you established or operate within the EU? </p> \
         </div> \
         <div class="form-check"> \
@@ -260,14 +260,36 @@ function mediacontent_change() {
     if (mediacontent == 1){
         // add p to result
         let p = document.createElement('p');
-        p.textContent = 'Transparency obligations for synthetic content';
+        p.textContent = 'Transparency Obligations: Synthetic Content (<a href="http://aicompass.barchero.it/article/50/">art.50</a>):   \
+            <ul> \
+                <li>Marking synthetic content: According to <a href="http://aicompass.barchero.it/article/50/">art.50(3)</a>, you must ensure that the outputs of the AI system are clearly marked in a machine-readable format, so they can be detected as artificially generated or manipulated;</li> \
+                <li>Exemptions: This obligation does not apply to content that is authorized by law, as stated in <a href="http://aicompass.barchero.it/article/50/">art.50(3)</a>.</li> \
+            </ul>';
         result.appendChild(p);
     }
     else if (mediacontent == 2){
         // add p to result
         let p = document.createElement('p');
-        p.textContent = 'You must respect transparency obligations towards natural persons';
-        result.appendChild(p);
+        p.textContent = 'Transparency Obligations for Natural Persons (<a href="http://aicompass.barchero.it/article/50/">art.50</a>): \
+            <ul> \
+                <li>Informing Individuals: According to <a href="http://aicompass.barchero.it/article/50/">art.50(1)</a>, the AI system, its provider, or its user must inform any person interacting with the system in a timely and clear manner that they are engaging with an AI system, unless it is obvious from the context;</li> \
+                <li>Providing Detailed Information: Under <a href="http://aicompass.barchero.it/article/50/">art.50(2)</a>, when appropriate and relevant, you must include additional information such as;</li> \
+                <li>AI-Enabled Functions: Specify which functions of the system are powered by AI;</li> \
+                <li>Human Oversight: Indicate whether there is human oversight involved in the AI system’s operations;</li> \
+                <li>Responsibility for Decision-Making: Clarify who is responsible for the decisions made by the AI system;</li> \
+                <li>Rights to Object and Seek Redress: Inform individuals about their rights to object to the AI system’s operations and how they can seek redress if needed.</li> \
+            </ul>';
+        // if same p is already in result, don't add it again
+        let p_result = result.querySelectorAll('p');
+        let found = false;
+        p_result.forEach(function (element) {
+            if (element.textContent == p.textContent) {
+                found = true;
+            }
+        }
+        );
+        if (!found)
+            result.appendChild(p);
     }
 }
 
@@ -293,10 +315,17 @@ function interact_change() {
     }
 
     if (interact == 1){
-        // add p to result with continues class
+        // add p to result
         let p = document.createElement('p');
-        p.className = 'continues';
-        p.innerHTML = 'You must respect transparency obligations towards natural persons';
+        p.textContent = 'Transparency Obligations for Natural Persons (<a href="http://aicompass.barchero.it/article/50/">art.50</a>): \
+            <ul> \
+                <li>Informing Individuals: According to <a href="http://aicompass.barchero.it/article/50/">art.50(1)</a>, the AI system, its provider, or its user must inform any person interacting with the system in a timely and clear manner that they are engaging with an AI system, unless it is obvious from the context;</li> \
+                <li>Providing Detailed Information: Under <a href="http://aicompass.barchero.it/article/50/">art.50(2)</a>, when appropriate and relevant, you must include additional information such as;</li> \
+                <li>AI-Enabled Functions: Specify which functions of the system are powered by AI;</li> \
+                <li>Human Oversight: Indicate whether there is human oversight involved in the AI system’s operations;</li> \
+                <li>Responsibility for Decision-Making: Clarify who is responsible for the decisions made by the AI system;</li> \
+                <li>Rights to Object and Seek Redress: Inform individuals about their rights to object to the AI system’s operations and how they can seek redress if needed.</li> \
+            </ul>';
         // if same p is already in result, don't add it again
         let p_result = result.querySelectorAll('p');
         let found = false;
@@ -344,8 +373,27 @@ function annex3_change() {
         // add p to result
         let p = document.createElement('p');
         p.className = 'continues';
-        p.textContent = 'Your AI System is under High-Risk AI systems\' regulation';
-        result.appendChild(p);
+        p.textContent = 'Your AI System is under High-Risk AI systems\' regulation (<a href="http://aicompass.barchero.it/article/6/">art.6</a>): \
+            <ul> \
+                <li>Risk management processes: Establish and implement risk management processes as required by <a href="http://aicompass.barchero.it/article/9/">art.9</a>;</li> \
+                <li>Data quality: Use high-quality training, validation, and testing data in accordance with <a href="http://aicompass.barchero.it/article/10/">art.10</a>;</li> \
+                <li>Documentation and logging: Create technical documentation and design logging features according to <a href="http://aicompass.barchero.it/article/11/">art.11</a> and <a href="http://aicompass.barchero.it/article/12/">art.12</a>;</li> \
+                <li>Transparency and user information: Ensure an appropriate level of transparency and provide necessary information to users, as specified in <a href="http://aicompass.barchero.it/article/13/">art.13</a>;</li> \
+                <li>Human oversight: Implement human oversight measures either built into the system or to be applied by users, as stated in <a href="http://aicompass.barchero.it/article/14/">art.14</a>;</li> \
+                <li>Robustness, accuracy, and cybersecurity: Ensure the AI system meets standards for robustness, accuracy, and cybersecurity according to <a href="http://aicompass.barchero.it/article/15/">art.15</a>;</li> \
+                <li>Quality management system: Set up and maintain a quality management system as required by <a href="http://aicompass.barchero.it/article/17/">art.17</a>.</li> \
+        </ul>';
+        // if same p is already in result, don't add it again
+        let p_result = result.querySelectorAll('p');
+        let found = false;
+        p_result.forEach(function (element) {
+            if (element.textContent == p.textContent) {
+                found = true;
+            }
+        }
+        );
+        if (!found)
+            result.appendChild(p);
 
         // interaction
         q_interact.addEventListener('change', interact_change);
@@ -376,8 +424,27 @@ function annex1A_safety_change() {
         // add p to result
         let p = document.createElement('p');
         p.className = 'continues';
-        p.textContent = 'Your AI System is under High-Risk AI systems\' regulation';
-        result.appendChild(p);
+        p.textContent = 'Your AI System is under High-Risk AI systems\' regulation (<a href="http://aicompass.barchero.it/article/6/">art.6</a>): \
+            <ul> \
+                <li>Risk management processes: Establish and implement risk management processes as required by <a href="http://aicompass.barchero.it/article/9/">art.9</a>;</li> \
+                <li>Data quality: Use high-quality training, validation, and testing data in accordance with <a href="http://aicompass.barchero.it/article/10/">art.10</a>;</li> \
+                <li>Documentation and logging: Create technical documentation and design logging features according to <a href="http://aicompass.barchero.it/article/11/">art.11</a> and <a href="http://aicompass.barchero.it/article/12/">art.12</a>;</li> \
+                <li>Transparency and user information: Ensure an appropriate level of transparency and provide necessary information to users, as specified in <a href="http://aicompass.barchero.it/article/13/">art.13</a>;</li> \
+                <li>Human oversight: Implement human oversight measures either built into the system or to be applied by users, as stated in <a href="http://aicompass.barchero.it/article/14/">art.14</a>;</li> \
+                <li>Robustness, accuracy, and cybersecurity: Ensure the AI system meets standards for robustness, accuracy, and cybersecurity according to <a href="http://aicompass.barchero.it/article/15/">art.15</a>;</li> \
+                <li>Quality management system: Set up and maintain a quality management system as required by <a href="http://aicompass.barchero.it/article/17/">art.17</a>.</li> \
+        </ul>';
+        // if same p is already in result, don't add it again
+        let p_result = result.querySelectorAll('p');
+        let found = false;
+        p_result.forEach(function (element) {
+            if (element.textContent == p.textContent) {
+                found = true;
+            }
+        }
+        );
+        if (!found)
+            result.appendChild(p);
 
         // interaction
         q_interact.addEventListener('change', interact_change);
@@ -435,7 +502,14 @@ function generalpurpose_change() {
         // add p to result with continues class
         let p = document.createElement('p');
         p.className = 'continues';
-        p.innerHTML = 'You have to follow General-Purpose AI Obligations';
+        p.innerHTML = 'You have to follow General-Purpose AI Obligations in <a href="http://aicompass.barchero.it/article/53/">Article 53</a> of the AI Act. In summary, you must: \
+            <ul> \
+                <li>Create and maintain technical documentation: under <a href="http://aicompass.barchero.it/article/53/">Article 53(1)(a)</a>, you are required to create and maintain technical documentation for the AI model and provide it to the AI Office upon request;</li> \
+                <li>Provider documentation: According to <a href="http://aicompass.barchero.it/article/53/">Article 53(1)(b)</a>, you must create and keep documentation for providers integrating your AI models, ensuring a balance between transparency and the protection of intellectual property (IP);</li> \
+                <li>Copyright compliance: As per <a href="http://aicompass.barchero.it/article/53/">Article 53(1)(c)</a>, you need to put in place a policy to ensure that your AI model complies with Union copyright law;</li> \
+                <li>Training data summary: Under Article <a href="http://aicompass.barchero.it/article/53/">Article 53(1)(d)</a>, you are required to publish a publicly available summary of the AI model’s training data, following the template provided by the AI Office;</li> \
+                <li>Additionally, under <a href="http://aicompass.barchero.it/article/85/">Article 85</a>, consider whether the General Purpose AI (GPAI) is used as, or forms a component of, an AI system. If it does, obligations on high-risk AI systems may apply either directly or indirectly.</li> \
+            </ul>';
         // if same p is already in result, don't add it again
         let p_result = result.querySelectorAll('p');
         let found = false;
