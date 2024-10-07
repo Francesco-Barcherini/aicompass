@@ -233,7 +233,7 @@ function createForms() {
 }
 
 function reset_result() {
-    result.innerHTML = '<h2>Output</h2><p>Answer to get more information</p>';
+    result.innerHTML = '<h2>Output</h2><p style="color:red">Answer to get more information</p>';
 }
 
 // mediacontent changes
@@ -265,6 +265,12 @@ function mediacontent_change() {
                 <li>Marking synthetic content: According to <a href="http://aicompass.barchero.it/article/50/">art.50(3)</a>, you must ensure that the outputs of the AI system are clearly marked in a machine-readable format, so they can be detected as artificially generated or manipulated;</li> \
                 <li>Exemptions: This obligation does not apply to content that is authorized by law, as stated in <a href="http://aicompass.barchero.it/article/50/">art.50(3)</a>.</li> \
             </ul>';
+        // remove all childre non .continues
+        let p_delete = result.querySelectorAll('p:not(.continues)');
+        p_delete.forEach(function (element) {
+            result.removeChild(element);
+        }
+        );
         result.appendChild(p);
     }
     else if (mediacontent == 2){
@@ -288,8 +294,16 @@ function mediacontent_change() {
             }
         }
         );
-        if (!found)
+        if (!found) {
+            // remove all childre non .continues
+                        // remove all childre non .continues
+            let p_delete = result.querySelectorAll('p:not(.continues)');
+            p_delete.forEach(function (element) {
+                result.removeChild(element);
+            }
+            );
             result.appendChild(p);
+        }
     }
 }
 
@@ -335,8 +349,16 @@ function interact_change() {
             }
         }
         );
-        if (!found)
+        if (!found) {
+            // remove all childre non .continues
+                        // remove all childre non .continues
+            let p_delete = result.querySelectorAll('p:not(.continues)');
+            p_delete.forEach(function (element) {
+                result.removeChild(element);
+            }
+            );
             result.appendChild(p);
+        }
 
         q_mediacontent.addEventListener('change', mediacontent_change);
         form.appendChild(q_mediacontent);
@@ -392,8 +414,16 @@ function annex3_change() {
             }
         }
         );
-        if (!found)
+        if (!found) {
+            // remove all childre non .continues
+                        // remove all childre non .continues
+            let p_delete = result.querySelectorAll('p:not(.continues)');
+            p_delete.forEach(function (element) {
+                result.removeChild(element);
+            }
+            );
             result.appendChild(p);
+        }
 
         // interaction
         q_interact.addEventListener('change', interact_change);
@@ -443,8 +473,16 @@ function annex1A_safety_change() {
             }
         }
         );
-        if (!found)
+        if (!found) {
+            // remove all childre non .continues
+                        // remove all childre non .continues
+            let p_delete = result.querySelectorAll('p:not(.continues)');
+            p_delete.forEach(function (element) {
+                result.removeChild(element);
+            }
+            );
             result.appendChild(p);
+        }
 
         // interaction
         q_interact.addEventListener('change', interact_change);
@@ -519,8 +557,16 @@ function generalpurpose_change() {
             }
         }
         );
-        if (!found)
+        if (!found) {
+            // remove all childre non .continues
+                        // remove all childre non .continues
+            let p_delete = result.querySelectorAll('p:not(.continues)');
+            p_delete.forEach(function (element) {
+                result.removeChild(element);
+            }
+            );
             result.appendChild(p);
+        }
 
         q_annex1B.addEventListener('change', annex1B_change);
         form.appendChild(q_annex1B);
