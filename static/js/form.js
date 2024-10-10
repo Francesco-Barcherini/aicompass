@@ -489,11 +489,13 @@ function interact_change() {
 
         q_mediacontent.addEventListener('change', mediacontent_change);
         form.appendChild(q_mediacontent);
+        set_helps('q_mediacontent');
     }
     else if (interact == 2){
         // mediacontent
         q_mediacontent.addEventListener('change', mediacontent_change);
         form.appendChild(q_mediacontent);
+        set_helps('q_mediacontent');
     }
 }
 
@@ -555,11 +557,13 @@ function annex3_change() {
         // interaction
         q_interact.addEventListener('change', interact_change);
         form.appendChild(q_interact);
+        set_helps('q_interact');
     }
     else if (annex3 == 2){
         // interaction
         q_interact.addEventListener('change', interact_change);
         form.appendChild(q_interact);
+        set_helps('q_interact');
     }
 }
 
@@ -614,11 +618,13 @@ function annex1A_safety_change() {
         // interaction
         q_interact.addEventListener('change', interact_change);
         form.appendChild(q_interact);
+        set_helps('q_interact');
     }
     else if (annex1A_safety == 2){
         // annex3
         q_annex3.addEventListener('change', annex3_change);
         form.appendChild(q_annex3);
+        set_helps('q_annex3');
     }
 }
 
@@ -641,11 +647,13 @@ function annex1B_change() {
         //interaction
         q_interact.addEventListener('change', interact_change);
         form.appendChild(q_interact);
+        set_helps('q_interact');
     }
     else if (annex1B == 2){
         //annex1A safety
         q_annex1A_safety.addEventListener('change', annex1A_safety_change);
         form.appendChild(q_annex1A_safety);
+        set_helps('q_annex1A_safety');
     }
 }
 
@@ -697,10 +705,12 @@ function generalpurpose_change() {
 
         q_annex1B.addEventListener('change', annex1B_change);
         form.appendChild(q_annex1B);
+        set_helps('q_annex1B');
     }
     else if (generalpurpose == 2){
         q_annex1B.addEventListener('change', annex1B_change);
         form.appendChild(q_annex1B);
+        set_helps('q_annex1B');
     }
 }
 // excluded2 changes
@@ -724,6 +734,7 @@ function excluded2_change() {
         //generalpurpose
         q_generalpurpose.addEventListener('change', generalpurpose_change);
         form.appendChild(q_generalpurpose);
+        set_helps('q_generalpurpose');
     }
 }
 
@@ -748,6 +759,7 @@ function prohibited_change() {
         // excluded2
         q_excluded2.addEventListener('change', excluded2_change);
         form.appendChild(q_excluded2);
+        set_helps('q_excluded2');
     }
 }
 
@@ -769,6 +781,7 @@ function established_change() {
         // prohibited
         q_prohibited.addEventListener('change', prohibited_change);
         form.appendChild(q_prohibited);
+        set_helps('q_prohibited');
     }
     else if (established == 2){
         // not regulated
@@ -793,11 +806,13 @@ function usedEU_change() {
     if (usedEU == 1){
         q_prohibited.addEventListener('change', prohibited_change);
         form.appendChild(q_prohibited);
+        set_helps('q_prohibited');
     }
     else if (usedEU == 2){
         // established
         q_established.addEventListener('change', established_change);
         form.appendChild(q_established);
+        set_helps('q_established');
     }
 }
 
@@ -821,11 +836,13 @@ function trademark_change() {
 
         q_usedEU.addEventListener('change', usedEU_change);
         form.appendChild(q_usedEU);
+        set_helps('q_usedEU');
     }
     else if (trademark == 2){
         // established
         q_established.addEventListener('change', established_change);
         form.appendChild(q_established);
+        set_helps('q_established');
     }
 }
 
@@ -849,6 +866,7 @@ function marketyourname_change() {
 
         q_usedEU.addEventListener('change', usedEU_change);
         form.appendChild(q_usedEU);
+        set_helps('q_usedEU');
     }
     else if (marketyourname == 2){
         // no regulated
@@ -873,6 +891,7 @@ function annex1A_change() {
     if (annex1A == 1){
         q_marketyourname.addEventListener('change', marketyourname_change);
         form.appendChild(q_marketyourname);
+        set_helps('q_marketyourname');
     }
     else if (annex1A == 2){
         // not regulated
@@ -897,6 +916,7 @@ function safety_change() {
     if (safety == 1){
         q_annex1A.addEventListener('change', annex1A_change);
         form.appendChild(q_annex1A);
+        set_helps('q_annex1A');
     }
     else if (safety == 2){
         // not regulated
@@ -921,14 +941,17 @@ function entity_change() {
     if (entity == 1){
         q_usedEU.addEventListener('change', usedEU_change);
         form.appendChild(q_usedEU);
+        set_helps('q_usedEU');
     }
     else if (entity == 2){
         q_trademark.addEventListener('change', trademark_change);
         form.appendChild(q_trademark);
+        set_helps('q_trademark');
     }
     else if (entity == 3){
         q_safety.addEventListener('change', safety_change);
         form.appendChild(q_safety);
+        set_helps('q_safety');
     }
 }
 
