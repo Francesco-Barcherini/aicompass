@@ -10,12 +10,14 @@
 
 <div class="community">
     <div class="chat">
-        <h2>Chat</h2>
+        <h2>Healthcare AI</h2>
         <div class="chat-box">
-            <div class="chat-message">
-                <p>Hi, I have a question about the AI Act. Can someone help me?</p>
+            <div class="chat-message question">
+                <label><i>Laura</i></label>
+                <p>Hi, I have a question about the AI Act as regards healthcare AI systems. Can someone help me?</p>
             </div>
-            <div class="chat-message">
+            <div class="chat-message answer">
+                <label><i>Prof. Albert AInstein - legal consultant</i></label>
                 <p>Yes, sure! What do you need?</p>
             </div>
         </div>
@@ -25,13 +27,15 @@
         </form>
     </div>
     <div class="forum">
-        <h2>Forum</h2>
+        <h2>Remote biometric systems</h2>
         <div class="forum-box">
-            <div class="forum-message">
-                <p>Hi, I have a question about the AI Act. Can someone help me?</p>
+            <div class="forum-message question">
+                <label><i>Laura</i></label>
+                <p>Hi, what is the less expensive way to bare high risk compliance in biometric start-ups?</p>
             </div>
-            <div class="forum-message">
-                <p>Yes, sure! What do you need?</p>
+            <div class="forum-message answer">
+                <label><i>L. Da Vinci - start-upper</i></label>
+                <p>I am also a start-upper. I can help you!</p>
             </div>
         </div>
         <form>
@@ -55,8 +59,8 @@
     }
 
     .chat, .forum {
-        margin: 0 5% 0 auto;
-        width: 45%;
+        margin: 0 auto;
+        width: 50%;
         height: fit-content;
     }
 
@@ -71,6 +75,14 @@
 
     .chat-message, .forum-message {
         margin-bottom: 10px;
+    }
+
+    .question {
+        text-align: left;
+    }
+
+    .answer {
+        text-align: right;
     }
 
     .chat input, .forum input {
@@ -91,5 +103,14 @@
     .chat button:hover, .forum button:hover {
         background-color: #303A99;
     }
+
+    .chat-box p {
+        margin-top: 0;
+    }
+
+    .forum-box p {
+        margin-top: 0;
+    }
+
 
 {% endblock %}
