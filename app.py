@@ -75,6 +75,17 @@ def annex(num):
 def home():
     return render_template('home.html')
 
+# Home Route
+@app.route('/community')
+def community():
+    return render_template('community.html')
+
+# Home Route
+@app.route('/sources')
+def sources():
+    return render_template('sources.html')
+
+
 # AI Evaluator Route
 @app.route('/ai-evaluator', methods=['GET', 'POST'])
 def ai_evaluator():

@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>AI Act Community</h1>
+<p>Use this community to deepen into the AI Act. Ask to other stakholders about your doubts and keep updated.</p>
+
+<!-- create a text input to ask questions to the community -->
+<!-- Use frontend to simulate a reddit chat -->
+<!-- use also <style> -->
+
+<div class="community">
+    <div class="chat">
+        <h2>Chat</h2>
+        <div class="chat-box">
+            <div class="chat-message">
+                <p>Hi, I have a question about the AI Act. Can someone help me?</p>
+            </div>
+            <div class="chat-message">
+                <p>Yes, sure! What do you need?</p>
+            </div>
+        </div>
+        <form>
+            <input type="text" id="chat-input" placeholder="Type your message here">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <div class="forum">
+        <h2>Forum</h2>
+        <div class="forum-box">
+            <div class="forum-message">
+                <p>Hi, I have a question about the AI Act. Can someone help me?</p>
+            </div>
+            <div class="forum-message">
+                <p>Yes, sure! What do you need?</p>
+            </div>
+        </div>
+        <form>
+            <input type="text" id="forum-input" placeholder="Type your message here">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+</div>
+
+<style>
+    .content {
+        margin: 2rem 4rem;
+        width: 100%;
+    }
+
+    .community {
+        margin: 0 auto;
+        display: flex;
+        width: 80%;
+    }
+
+    .chat, .forum {
+        margin: 0 5% 0 auto;
+        width: 45%;
+        height: fit-content;
+    }
+
+    .chat-box, .forum-box {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background-color: #3b7bce7e;
+        padding: 20px;
+        height: 300px;
+        overflow-y: scroll;
+    }
+
+    .chat-message, .forum-message {
+        margin-bottom: 10px;
+    }
+
+    .chat input, .forum input {
+        width: 80%;
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .chat button, .forum button {
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #3b7bce;
+        color: white;
+        border: none;
+        border-radius: 6px;
+    }
+
+    .chat button:hover, .forum button:hover {
+        background-color: #303A99;
+    }
+
+{% endblock %}
