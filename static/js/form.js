@@ -95,10 +95,10 @@ let summaries = {
 };
 
 let defs = {
-    "Provider": "Who developes an AI system or has an AI system developed and puts it on the market under its name or trademark",
-    "Deployer": "Who uses an AI system in course of a professional activity",
-    "Distributor": "Who makes an AI system available on the market on behalf of its producer",
-    "Importer": "Who places on the market an AI system developed outside the EU",
+    "Provider": "He who develops an AI system or has an AI system developed and puts it on the market under its name or trademark",
+    "Deployer": "He who uses an AI system in course of a professional activity",
+    "Distributor": "He who makes an AI system available on the market on behalf of its producer",
+    "Importer": "He who places on the market an AI system developed outside the EU",
     "Trademark": "Name or symbol that a company uses on its products and that cannot legally be used by another company.",
     "Substantial modification": "A change to AI system that affects its initial purpose or its main inital characteristics",
     "General purpose": "An AI model that is capable of accomplishing a wide range of tasks",
