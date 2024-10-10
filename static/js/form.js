@@ -984,7 +984,7 @@ function set_helps(question) {
                 let re = new RegExp(word, 'gi');
                 let found = article.innerHTML.match(re);
                 if (found) {
-                    definitions.innerHTML += '<strong>' + word + '</strong>: ' + defs[word] + '<br>';
+                    definitions.innerHTML += '<p><strong>' + word + '</strong>: ' + defs[word] + '</p>';
                 }
             }
             );
