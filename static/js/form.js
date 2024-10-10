@@ -31,14 +31,12 @@ let summaries = {
 </ul> \
 <p>If your AI system falls into one of these categories, it’s considered prohibited. For more details, visit <a href='http://aicompass.barchero.it/article/5'>Article 5</a>.</p> \
 ",
-"q_excluded2": "<p>Article 5 outlines certain AI systems that are outright prohibited in the EU because they are considered too risky. Let’s break it down:</p> \
+"q_excluded2": "<p> Article 2 helps you understand if your AI system falls under the EU AI Act. The key question here is whether your AI system is used within the European Union. Here’s what to consider:</p> \
 <ul> \
-  <li><strong>Subliminal Manipulation:</strong> If your AI uses hidden techniques to influence people’s decisions in harmful ways without them realizing it, it’s banned.</li> \
-    <li><strong>Exploitation of Vulnerabilities:</strong> AI systems that take advantage of people’s vulnerabilities (like age or disability) to cause harm are not allowed.</li> \
-    <li><strong>Social Scoring:</strong> Systems that give people scores based on their social behavior, leading to unfair treatment in different contexts, are prohibited.</li> \
-    <li><strong>Real-time Biometric Identification in Public Spaces:</strong> AI systems used for real-time facial recognition in public spaces for law enforcement are banned, with very limited exceptions.</li> \
+  <li><strong>Yes:</strong> If your AI system is being used in the EU or its output is being accessed in the EU, it means the system is subject to EU rules. Even if you're based outside the EU, if your system affects users or processes within the EU, you need to comply with the EU AI Act.</li> \
+    <li><strong>No:</strong> If your AI system is not used in the EU and doesn't interact with any processes or users within the EU, the Act might not apply to you.</li> \
 </ul> \
-<p>If your AI system falls into one of these categories, it’s considered prohibited. For more details, visit <a href='http://aicompass.barchero.it/article/5'>Article 5</a>.</p> \
+<p>Check the details in <a href='http://aicompass.barchero.it/article/2'>Article 2</a>.</p> \
 ",
 "q_generalpurpose": "<p>Article 51 defines general-purpose AI models as systems capable of performing a wide range of distinct tasks, often used in various downstream applications. Let’s break it down:</p> \
 <ul> \
@@ -103,7 +101,8 @@ let defs = {
     "Importer": "Who places on the market an AI system developed outside the EU",
     "Trademark": "Name or symbol that a company uses on its products and that cannot legally be used by another company.",
     "Substantial modification": "A change to AI system that affects its initial purpose or its main inital characteristics",
-    "General purpose AI model": "An AI model that is capable of accomplishing a wide range of tasks",
+    "General purpose": "An AI model that is capable of accomplishing a wide range of tasks",
+    "General-purpose": "An AI model that is capable of accomplishing a wide range of tasks",
     "Risk": "The combination of the probability of an occurrence of harm and the severity of that harm",
     "Training data": "Data used to increase the skills of an AI system",
     "Biometric data": "Personal data concerning the physical, physiological or behavioural characteristics of a natural person ",
@@ -964,6 +963,33 @@ function set_helps(question) {
         <h4>Summary of the article</h4> \
         " + summaries[question];
 
+    // scrape the div element with classname = "et_pb_module et_pb_post_content et_pb_post_content_0_tb_body"
+    // from the page http://aicompass.barchero.it + QuestionToArticle[question]
+
+    definitions.innerHTML = " \
+        <h3>Helpdesk</h3> \
+        <h4>Definitions</h4> \
+    ";
+
+    let url = 'http://aicompass.barchero.it' + QuestionToArticle[question];
+    fetch(url)
+        .then(response => response.text())
+        .then(data => {
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(data, 'text/html');
+            let article = doc.querySelector('.et_pb_module.et_pb_post_content.et_pb_post_content_0_tb_body');
+            // for each word in defs dictionary, search if it is in the article. Attention to case insensitive
+            let words = Object.keys(defs);
+            words.forEach(function (word) {
+                let re = new RegExp(word, 'gi');
+                let found = article.innerHTML.match(re);
+                if (found) {
+                    definitions.innerHTML += '<strong>' + word + '</strong>: ' + defs[word] + '<br>';
+                }
+            }
+            );
+        }
+        );
 }
 
 
